@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imccalc/componentes/cartao_padrao.dart';
 import 'package:imccalc/constantes.dart';
+import 'package:imccalc/telas/tela_compartilhar.dart';
 import 'package:imccalc/telas/tela_principal.dart';
 import '../componentes/cartao_padrao.dart';
 import '../constantes.dart';
@@ -20,8 +21,31 @@ class TelaResultados extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text('CALCULADORA IMC', style: TextStyle(fontFamily: 'Fira Code')),
+        title: Text('Calculadora de IMC',
+            style: TextStyle(fontFamily: 'Fira Code')),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.share),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute<void>(
+                builder: (BuildContext context) {
+                  return TelaCompartilhar(); /* Scaffold(
+                    appBar: AppBar(
+                      title: const Text('Next page'),
+                    ),
+                    body: const Center(
+                      child: Text(
+                        'This is the next page',
+                        style: TextStyle(fontSize: 24),
+                      ),
+                    ),
+                  );*/
+                },
+              ));
+            },
+          ),
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
