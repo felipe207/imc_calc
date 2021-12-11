@@ -30,17 +30,7 @@ class TelaResultados extends StatelessWidget {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute<void>(
                 builder: (BuildContext context) {
-                  return TelaCompartilhar(); /* Scaffold(
-                    appBar: AppBar(
-                      title: const Text('Next page'),
-                    ),
-                    body: const Center(
-                      child: Text(
-                        'This is the next page',
-                        style: TextStyle(fontSize: 24),
-                      ),
-                    ),
-                  );*/
+                  return TelaCompartilhar();
                 },
               ));
             },

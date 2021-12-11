@@ -4,6 +4,7 @@ const kAlturaContainerInferior = 45.0;
 const kCorAtivaCartaoPadrao = Color(0xFF9E9E9E);
 const kCorInativaCartaoPadrao = Color(0xFF7E7E7E);
 const kCorContainerInferior = Color(0xFFFF5822);
+const kCorCartaoRedes = Color(0xFF7E7E7E);
 
 const kNumeroTextStyle = TextStyle(
     fontSize: 40.0, fontWeight: FontWeight.w900, fontFamily: 'Fira Code');
