@@ -7,6 +7,17 @@ import '../componentes/cartao_padrao.dart';
 import '../constantes.dart';
 import '../componentes/botao_inferior.dart';
 import '../calculadora_imc.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:async';
+import 'package:screenshot/screenshot.dart';
+import 'package:social_share/social_share.dart';
+
+/*class TelaCompartilhar extends StatelessWidget {
+  compartilharPreco() {
+    final imcPrint = 24;
+    SocialShare.shareOptions('hgh');
+  }
+}*/
 
 class TelaResultados extends StatelessWidget {
   TelaResultados(
@@ -17,25 +28,38 @@ class TelaResultados extends StatelessWidget {
   final String resultadoIMC;
   final String resultadoTexto;
   final String interpretacao;
+
+  compartilharPreco() {
+    // final imcPrint = 24;
+    SocialShare.shareOptions('hgh');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Calculadora de IMC',
             style: TextStyle(fontFamily: 'Fira Code')),
-        actions: <Widget>[
+        actions: [
           IconButton(
-            icon: const Icon(Icons.share),
-            tooltip: 'Show Snackbar',
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute<void>(
-                builder: (BuildContext context) {
-                  return TelaCompartilhar();
-                },
-              ));
-            },
-          ),
+            onPressed: compartilharPreco,
+            icon: Icon(Icons.share),
+          )
         ],
+//actions: <Widget>[
+//IconButton(
+//icon: const Icon(Icons.share),
+//tooltip: 'Show Snackbar',
+        //   onPressed: () {
+        //     Navigator.push(context, MaterialPageRoute<void>(
+        //       builder: (BuildContext context) {
+        //       return TelaCompartilhar();
+        //   },
+        //)
+        //);
+        //},
+        //),
+        //],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
