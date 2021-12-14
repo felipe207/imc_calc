@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imccalc/componentes/cartao_padrao.dart';
 import 'package:imccalc/constantes.dart';
-import 'package:imccalc/telas/tela_compartilhar.dart';
+import 'package:imccalc/telas/tela_nome.dart';
 import 'package:imccalc/telas/tela_principal.dart';
 import '../componentes/cartao_padrao.dart';
 import '../constantes.dart';
