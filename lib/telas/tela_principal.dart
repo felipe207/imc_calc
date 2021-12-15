@@ -12,7 +12,7 @@ enum Sexo { masculino, feminino }
 
 class TelaPrincipal extends StatefulWidget {
   String nome;
-  TelaPrincipal(this.nome);
+  TelaPrincipal({required this.nome});
 
   @override
   _TelaPrincipalState createState() => _TelaPrincipalState();

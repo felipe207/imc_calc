@@ -11,11 +11,13 @@ class _TelaNomeState extends State<TelaNome> {
 
   void Salvar() {
     String nome;
-    setState(() {
-      nome = txtnome.text.toUpperCase();
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => TelaPrincipal(nome)));
-    });
+    nome = txtnome.text.toUpperCase();
+    if (nome != '') {
+      setState(() {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => TelaPrincipal(nome: nome)));
+      });
+    }
   }
 
   @override
