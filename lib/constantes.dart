@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 const kAlturaContainerInferior = 45.0;
@@ -33,6 +35,13 @@ const kIMCTextStyle = TextStyle(
 const kCorpoTextStyle = TextStyle(
   color: Colors.black,
   fontSize: 20.0,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'Fira Code',
+);
+
+const kNomeTextStyle = TextStyle(
+  color: Colors.black,
+  fontSize: 30.0,
   fontWeight: FontWeight.bold,
   fontFamily: 'Fira Code',
 );

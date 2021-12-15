@@ -1,37 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:imccalc/telas/tela_principal.dart';
-import '../componentes/cartao_padrao.dart';
-import '../componentes/conteudo_icone.dart';
-import '../componentes/conteudo_icone2.dart';
-import '../constantes.dart';
-import 'tela_resultados.dart';
-import '../componentes/botao_inferior.dart';
-import '../componentes/botao_arredondado.dart';
-import '../calculadora_imc.dart';
-import '../telas/tela_resultados.dart';
-import '../componentes/cartao_redes.dart';
 
-import 'dart:io';
+class TelaNome extends StatefulWidget {
+  @override
+  _TelaNomeState createState() => _TelaNomeState();
+}
 
-import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'dart:async';
-import 'package:screenshot/screenshot.dart';
-import 'package:social_share/social_share.dart';
-
-class Nome extends StatelessWidget {
+class _TelaNomeState extends State<TelaNome> {
   TextEditingController txtnome = TextEditingController();
-/*  void Salvar() {
 
+  void Salvar() {
     String nome;
+    setState(() {
+      nome = txtnome.text.toUpperCase();
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => TelaPrincipal(nome)));
+    });
+  }
 
-    setState((){
-      nome = txtnome.text;
-    
-  });
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        margin: EdgeInsets.all(30),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              controller: txtnome,
+              decoration: InputDecoration(
+                labelText: 'nome',
+              ),
+            ),
+            // ignore: deprecated_member_use
+            RaisedButton(
+              child: Text(
+                "salvar",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              color: Colors.blue,
+              onPressed: Salvar,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+/*
 
-}*/
+class TelaNome extends StatelessWidget {
+  TextEditingController txtnome = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -79,3 +97,4 @@ class Nome extends StatelessWidget {
     ));
   }
 }
+*/

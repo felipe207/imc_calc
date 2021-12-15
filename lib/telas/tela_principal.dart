@@ -11,6 +11,9 @@ import '../calculadora_imc.dart';
 enum Sexo { masculino, feminino }
 
 class TelaPrincipal extends StatefulWidget {
+  String nome;
+  TelaPrincipal(this.nome);
+
   @override
   _TelaPrincipalState createState() => _TelaPrincipalState();
 }
@@ -22,18 +25,39 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
 
   int idade = 24;
 
+  void proximaTela() {
+    setState(() {
+      String nome2;
+      nome2 = widget.nome;
+      CalculadoraIMC calc = CalculadoraIMC(altura: altura, peso: peso);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => TelaResultados(
+            resultadoIMC: calc.calcularIMC(),
+            resultadoTexto: calc.obterResultado(),
+            interpretacao: calc.obterInterpretacao(),
+            nome2: nome2,
+          ),
+        ),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Calculadora de IMC',
+          "Calcule seu IMC ${widget.nome}",
+          // 'Calculadora de IMC',
           style: TextStyle(fontFamily: 'Fira Code'),
         ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+//child:Text("Qual seu IMC: ${widget.nome}"),
           Expanded(
             child: Row(
               children: [
@@ -202,9 +226,9 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               ],
             ),
           ),
-          BotaoInferior(
-            tituloBotao: 'CALCULAR',
-            aoPressionar: () {
+          BotaoInferior(tituloBotao: 'CALCULAR', aoPressionar: proximaTela
+
+              /* () {
               CalculadoraIMC calc = CalculadoraIMC(altura: altura, peso: peso);
               Navigator.push(
                 context,
@@ -216,8 +240,8 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                   ),
                 ),
               );
-            },
-          ),
+            },*/
+              ),
         ],
       ),
     );

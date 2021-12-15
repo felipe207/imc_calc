@@ -1,16 +1,12 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
-
 class CalculadoraIMC {
   CalculadoraIMC({required this.altura, required this.peso});
   final int altura;
   final int peso;
   double _imc = 0;
-
   //para pegar variável de outro método é preciso
   //criar uma propriedade privada
-
   String calcularIMC() {
     //pow é um método de exponenciação
     double _imc = peso / pow(altura / 100, 2);
