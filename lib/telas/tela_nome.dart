@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:imccalc/constantes.dart';
 import 'package:imccalc/telas/tela_principal.dart';
 
 class TelaNome extends StatefulWidget {
@@ -23,26 +24,44 @@ class _TelaNomeState extends State<TelaNome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        margin: EdgeInsets.all(30),
-        child: Column(
-          children: <Widget>[
-            TextField(
-              controller: txtnome,
-              decoration: InputDecoration(
-                labelText: 'nome',
+      body: Center(
+        child: Container(
+          margin: EdgeInsets.all(80),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              TextField(
+                controller: txtnome,
+                decoration: InputDecoration(
+                    labelText: 'Informe seu nome aqui!',
+                    labelStyle: TextStyle(
+                        color: Colors.white,
+                        height: 0.5, // 0,1 - label will sit on top of border
+                        fontFamily: 'Fira Code',
+                        fontSize: 23.0),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide:
+                            BorderSide(color: kCorBotaoNome, width: 2))),
               ),
-            ),
-            // ignore: deprecated_member_use
-            RaisedButton(
-              child: Text(
-                "salvar",
-                style: TextStyle(color: Colors.white, fontSize: 20),
+              // Expanded(
+              SizedBox(height: 23.0),
+              // ),
+              // ignore: deprecated_member_use
+              RaisedButton(
+                child: Text(
+                  "salvar",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: 'Fira Code',
+                  ),
+                ),
+                color: kCorBotaoNome,
+                onPressed: Salvar,
               ),
-              color: Colors.blue,
-              onPressed: Salvar,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
